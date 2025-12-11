@@ -29,3 +29,18 @@ function createDog(delay) {
     dog.remove();
   }, 5000);
 }
+
+document.addEventListener("mousemove", (e) => {
+  const trail = document.createElement("div");
+  trail.classList.add("cursor-trail");
+
+  trail.style.left = e.clientX + "px";
+  trail.style.top = e.clientY + "px";
+
+  document.body.appendChild(trail);
+
+  // 消えるアニメ後に削除
+  setTimeout(() => {
+    trail.remove();
+  }, 600);
+});
