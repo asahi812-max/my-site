@@ -3,7 +3,7 @@
 body { font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; margin:0; padding:0; color:#222; background:linear-gradient(120deg, #ffe6ff, #cce0ff);; }
 header { background:hsla(256, 44%, 59%, 0.637); color:hsl(315, 70%, 44%); padding:20px; text-align:center; }
 header .sub { opacity:0.9; margin-top:6px; font-size:0.9rem; }
-.flash-title{font-size: 3rem; font-weight:bold; text-align:center; animation:flashColor 1.2s infinite linear,flashGlow 0.8s infinite altrnate;}
+.flash-title{font-size: 3rem; font-weight:bold; text-align:center; animation:flashColor 1.2s infinite linear,flashGlow 0.8s infinite alternate;}
 @keyframes flashColor{0% { filter: hue-rotate(0deg);} 50%{ filter: hue-rotate(180deg);} 100%{ filter: hue-rotate(360deg);}}
 @keyframes flashGlow{0% {text-shadow: 0 0 10px #ff00ff, 0 0 30px #00ffff;transform: scale(1); }100% {text-shadow: 0 0 20px #ffff00, 0 0 40px #ff0000; transform: scale(1.05); }}
 marquee { font-size: 1.2rem; color: #ff66cc; font-weight: bold;  margin: 10px 0;  text-shadow: 0 0 5px #ffffff;}
@@ -12,4 +12,4 @@ h2 { border-bottom:2px solid #eee; padding-bottom:6px; }
 #skills ul { list-style: disc; margin-left:20px; }
 footer { text-align:center; color:#777; padding:20px 0; margin-top:30px; }
 button { padding:15px 30px; border-radius:10px; box-shadow: 0 0 20px #ff99dd; transition: 0.3s; background:#fff; cursor:pointer; }
-button:hover:hover {box-shadow: 0 0 30px #ffffff, 0 0 50px #ff66cc; transform: scale(1.05);}
+button:hover {box-shadow: 0 0 30px #ffffff, 0 0 50px #ff66cc; transform: scale(1.05);}
