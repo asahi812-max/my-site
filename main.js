@@ -11,7 +11,7 @@ document.getElementById("helloBtn").addEventListener("click", () => {
 
 document.getElementById("helloBtn").addEventListener("click", () => {
   // 犬を20匹走らせる
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 20; i++) {
     createDog(i * 200); // ずらして登場
   }
 });
@@ -19,7 +19,7 @@ document.getElementById("helloBtn").addEventListener("click", () => {
 function createDog(delay) {
   const dog = document.createElement("img");
   dog.src = "dog-run.png";
-  dog.classList.add("dog");
+  dog.classList.add("run-dog");
   dog.style.animationDelay = delay + "ms";
 
   document.body.appendChild(dog);
