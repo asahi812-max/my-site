@@ -10,8 +10,8 @@ document.getElementById("helloBtn").addEventListener("click", () => {
 });
 
 document.getElementById("helloBtn").addEventListener("click", () => {
-  // 犬を20匹走らせる
-  for (let i = 0; i < 20; i++) {
+  // 犬を10匹走らせる
+  for (let i = 0; i < 10; i++) {
     createDog(i * 200); // ずらして登場
   }
 });
