@@ -1,9 +1,12 @@
 /* style.css - シンプルな見た目調整 */
-body { font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; margin:0; padding:0; color:#222; background:#fafafa; }
+
+body { font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; margin:0; padding:0; color:#222; background:linear-gradient(120deg, #ffe6ff, #cce0ff);; }
 header { background:#2b2b2b; color:#fff; padding:20px; text-align:center; }
 header .sub { opacity:0.9; margin-top:6px; font-size:0.9rem; }
+marquee { font-size: 1.2rem; color: #ff66cc; font-weight: bold;  margin: 10px 0;  text-shadow: 0 0 5px #ffffff;}
 main { max-width:720px; margin:24px auto; padding:0 16px; }
 h2 { border-bottom:2px solid #eee; padding-bottom:6px; }
 #skills ul { list-style: disc; margin-left:20px; }
 footer { text-align:center; color:#777; padding:20px 0; margin-top:30px; }
-button { padding:8px 12px; border-radius:4px; border:1px solid #ccc; background:#fff; cursor:pointer; }
+button { padding:15px 30px; border-radius:10px; box-shadow: 0 0 20px #ff99dd; transition: 0.3s; background:#fff; cursor:pointer; }
+button:hover:hover {box-shadow: 0 0 30px #ffffff, 0 0 50px #ff66cc; transform: scale(1.05);}
