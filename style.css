@@ -42,7 +42,7 @@ header .sub {
   50% { filter: hue-rotate(180deg); }
   100% { filter: hue-rotate(360deg); }
 }
-@keyframes flashshake{ 
+@keyframes flashShake{ 
     0% { transform: translate(0,0);}
     25%  { transform: translate(2px, -2px); }
     50%  { transform: translate(-2px, 2px); }
