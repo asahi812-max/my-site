@@ -5,6 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const btn = document.getElementById("helloBtn");
   const res = document.getElementById("helloResult");
   btn.addEventListener("click", function() {
-    res.textContent = "こんにちは。自己紹介ページを見てくれてありがとう。";
+    res.textContent = "ｼｯ！　俺だ！この世界は仕組まれている";
   });
 });
