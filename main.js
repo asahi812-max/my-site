@@ -29,7 +29,6 @@ function createDog(delay) {
     dog.remove();
   }, 5000);
 }
-
 document.addEventListener("mousemove", (e) => {
   const trail = document.createElement("div");
   trail.classList.add("cursor-trail");
@@ -39,8 +38,8 @@ document.addEventListener("mousemove", (e) => {
 
   document.body.appendChild(trail);
 
-  // 消えるアニメ後に削除
   setTimeout(() => {
     trail.remove();
-  }, 600);
+  }, 800);
 });
+
