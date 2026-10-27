@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>トレカ抽選候補 | トレカ抽選ノート</title>
+<style>
+:root{color-scheme:light dark;--bg:#f5f3ed;--fg:#202923;--card:#fff;--line:#d8ddd6;--green:#315b4d}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Yu Gothic",sans-serif;background:var(--bg);color:var(--fg)}
+header{background:var(--green);color:#fff;padding:22px max(16px,calc((100vw - 920px)/2))}
+header h1{font-size:25px;margin:4px 0}header p{font-size:13px;line-height:1.6;margin:4px 0}
+main{max-width:920px;margin:auto;padding:18px}.notice{padding:13px;border:1px solid #e9d6a6;background:#fff9e9;color:#27362f;border-radius:12px;font-size:13px;line-height:1.7;margin-bottom:14px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.tools input,.tools select,.tools button{font:inherit;padding:10px;border-radius:9px;border:1px solid var(--line)}.tools input{flex:1;min-width:180px}.tools button{background:var(--green);color:white;border:0;cursor:pointer}
+#status{font-size:12px;line-height:1.6;margin:10px 0}.list{display:grid;grid-template-columns:1fr 1fr;gap:12px}.item{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px;overflow-wrap:anywhere}.item h2{font-size:16px;line-height:1.5;margin:7px 0}.muted{font-size:12px;line-height:1.7;opacity:.8}.tag{display:inline-block;font-size:11px;border:1px solid var(--line);border-radius:6px;padding:3px 6px;margin-right:5px}.item a{color:#276baf;word-break:break-all}.empty{padding:24px;text-align:center}.foot{font-size:11px;line-height:1.7;opacity:.75;padding:20px 0}
+@media(max-width:620px){.list{grid-template-columns:1fr}main{padding:13px}header{padding:18px}}
+@media(prefers-color-scheme:dark){:root{--bg:#171d19;--fg:#f3f4ef;--card:#222a25;--line:#39443c}.notice{background:#29291f;color:#f3f4ef;border-color:#645632}.item a{color:#9ec9ff}}
+</style>
+</head>
+<body>
+<header><div>MY TCG DRAW TRACKER</div><h1>トレカ抽選ノート</h1><p>札幌・北海道を優先｜ポケカ & ワンピカード<br>公開情報から見つけた「確認候補」を自動表示します。</p></header>
+<main>
+<div class="notice"><strong>これは抽選候補の自動収集ページです。</strong><br>候補を見つけた時点では、募集がまだ有効か・公式情報か・締切や本人確認条件が正しいかは未確認です。必ず元の告知を開いて確認してください。応募の自動送信は行いません。</div>
+<div class="tools"><input id="q" type="search" placeholder="商品名・店舗・記事名で検索"><select id="game"><option value="all">全カード</option><option value="pokemon">ポケカ</option><option value="onepiece">ワンピカード</option></select><button id="reload">最新データを再読込</button></div>
+<div id="status" role="status">データを読み込んでいます…</div>
+<div id="list" class="list"></div>
+<div class="foot">収集元：Google Newsの公開RSS検索結果。候補の網羅性や募集の有効性は保証されません。本人確認書類の番号やパスワードは入力しないでください。</div>
+</main>
+<script>
+let allItems=[];
+const esc=s=>String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function render(){
+ const q=document.getElementById("q").value.trim().toLowerCase();
+ const game=document.getElementById("game").value;
+ const rows=allItems.filter(x=>(game==="all"||x.game===game)&&[x.title,x.publisher,x.region_priority,x.query].join(" ").toLowerCase().includes(q));
+ document.getElementById("list").innerHTML=rows.length?rows.map(x=>'<article class="item"><span class="tag">'+esc(x.game==="pokemon"?"ポケカ":x.game==="onepiece"?"ワンピカード":"カード未判定")+'</span><span class="tag">'+esc(x.region_priority||"地域未確認")+'</span><h2>'+esc(x.title)+'</h2><div class="muted">掲載元：'+esc(x.publisher||"未確認")+'<br>記事公開：'+esc(x.published||"未確認")+'<br>応募締切：未確認 / 当選発表：未確認<br>本人確認・名義・購入期限：元の告知で要確認</div><p><a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">元の記事・告知を確認</a></p><div class="muted">検索語：'+esc(x.query||"未確認")+'</div></article>').join(""):'<div class="empty">該当する候補はありません。</div>';
+}
+async function load(){
+ const status=document.getElementById("status");status.textContent="データを読み込んでいます…";
+ try{
+  const response=await fetch("./data/collected.json?ts="+Date.now(),{cache:"no-store"});
+  if(!response.ok)throw new Error("HTTP "+response.status);
+  const data=await response.json();allItems=Array.isArray(data.items)?data.items:[];
+  status.textContent="候補 "+allItems.length+"件｜最終収集："+(data.collected_at||"初回実行前")+"｜検索エラー："+((data.errors||[]).length)+"件";
+  render();
+ }catch(e){
+  status.textContent="データを取得できませんでした。GitHub Pagesで公開されているか、Actionsが一度実行されたか確認してください。";
+  document.getElementById("list").innerHTML='<div class="empty">まだデータを読み込めません。時間をおいて再読み込みしてください。</div>';
+ }
+}
+document.getElementById("reload").addEventListener("click",load);
+document.getElementById("q").addEventListener("input",render);
+document.getElementById("game").addEventListener("change",render);
+load();
+</script>
+</body>
+</html>
