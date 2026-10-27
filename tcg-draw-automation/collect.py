@@ -102,12 +102,9 @@ def main():
         except Exception as exc:
             errors.append({"query": query, "error": str(exc)})
     rows = sorted(all_rows.values(), key=lambda x: (
-        0 if x["region_priority"] == "札幌・北海道関連候補" else 1,
-        x["published"]
-    ), reverse=False)
-    # Keep the most recent entries first within each region priority.
-    rows.sort(key=lambda x: (x["region_priority"] != "札幌・北海道関連候補", x["published"]), reverse=False)
-    rows.sort(key=lambda x: (x["region_priority"] != "札幌・北海道関連候補", x["published"]), reverse=False)
+        x["region_priority"] != "札幌・北海道関連候補",
+        -(parse_date(x["published"]).timestamp() if parse_date(x["published"]) else 0),
+    ))
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({
         "collected_at": datetime.now(timezone.utc).isoformat(),
