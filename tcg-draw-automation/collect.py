@@ -30,7 +30,7 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; TCGDrawCandidateCollector/2.0
 MAX_AGE_DAYS = 14
 
 def clean(value):
-    return re.sub(r"\\s+", " ", value or "").strip()
+    return re.sub(r"\s+", " ", value or "").strip()
 
 def parse_date(value):
     try:
@@ -107,7 +107,7 @@ def main():
         try:
             for row in fetch(query):
                 # Keep one copy per title so Google News variants of the same article do not multiply.
-                key = re.sub(r"\\W+", "", row["title"].lower())
+                key = re.sub(r"\W+", "", row["title"].lower())
                 if key not in all_rows or row["published"] > all_rows[key]["published"]:
                     all_rows[key] = row
         except Exception as exc:
@@ -125,7 +125,7 @@ def main():
         "count": len(rows),
         "errors": errors,
         "items": rows,
-    }, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {len(rows)} filtered candidates to {OUT}; {len(errors)} query errors.")
 
 if __name__ == "__main__":
