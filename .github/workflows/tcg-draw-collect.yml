@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: "0 12 * * *"
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/tcg-draw-collect.yml"
+      - "tcg-draw-automation/collect.py"
 
 permissions:
   contents: write
