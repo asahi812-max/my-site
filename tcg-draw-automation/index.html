@@ -19,20 +19,31 @@ main{max-width:920px;margin:auto;padding:18px}.notice{padding:13px;border:1px so
 <body>
 <header><div>MY TCG DRAW TRACKER</div><h1>トレカ抽選ノート</h1><p>札幌・北海道を優先｜ポケカ & ワンピカード<br>公開情報から見つけた「確認候補」を自動表示します。</p></header>
 <main>
-<div class="notice"><strong>これは抽選候補の自動収集ページです。</strong><br>候補を見つけた時点では、募集がまだ有効か・公式情報か・締切や本人確認条件が正しいかは未確認です。必ず元の告知を開いて確認してください。応募の自動送信は行いません。</div>
+<div class="notice"><strong>まとめ記事・古い記事を除外した候補一覧です。</strong><br>掲載から14日を超えた記事や、まとめ・攻略・結果報告系の記事は表示対象から外します。ただし、記事が新しくても募集が終了している場合があります。受付中と確認できるまでは、応募前に告知ページで締切と申込先を確認してください。応募の自動送信は行いません。</div>
 <div class="tools"><input id="q" type="search" placeholder="商品名・店舗・記事名で検索"><select id="game"><option value="all">全カード</option><option value="pokemon">ポケカ</option><option value="onepiece">ワンピカード</option></select><button id="reload">最新データを再読込</button></div>
 <div id="status" role="status">データを読み込んでいます…</div>
 <div id="list" class="list"></div>
-<div class="foot">収集元：Google Newsの公開RSS検索結果。候補の網羅性や募集の有効性は保証されません。本人確認書類の番号やパスワードは入力しないでください。</div>
+<div class="foot">収集元：Google Newsの公開RSS検索結果。まとめ記事・結果記事を除外し、14日以内の候補のみ表示します。RSSだけでは締切や申込フォーム直リンクを確定できないため、申込先と受付状況はリンク先で確認してください。</div>
 </main>
 <script>
 let allItems=[];
 const esc=s=>String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function isRecentCandidate(x){
+ const published=Date.parse(x.published||"");
+ if(!Number.isFinite(published)||Date.now()-published>14*24*60*60*1000)return false;
+ const title=String(x.title||"");
+ const publisher=String(x.publisher||"");
+ const blocked=["まとめ","やり方","方法","探し方","当選率","当選確率","結果発表","当選結果","再販情報","攻略","当選されたお客様","発売日までに","ランキング","比較"];
+ const blockedPublishers=["キャラグー","SNKRDUNK","スニーカーダンク","シブヤ経済新聞","Infoseek","毎日新聞","PR TIMES"];
+ return !blocked.some(term=>title.includes(term))&&!blockedPublishers.some(term=>publisher.toLowerCase().includes(term.toLowerCase()));
+}
 function render(){
  const q=document.getElementById("q").value.trim().toLowerCase();
  const game=document.getElementById("game").value;
- const rows=allItems.filter(x=>(game==="all"||x.game===game)&&[x.title,x.publisher,x.region_priority,x.query].join(" ").toLowerCase().includes(q));
- document.getElementById("list").innerHTML=rows.length?rows.map(x=>'<article class="item"><span class="tag">'+esc(x.game==="pokemon"?"ポケカ":x.game==="onepiece"?"ワンピカード":"カード未判定")+'</span><span class="tag">'+esc(x.region_priority||"地域未確認")+'</span><h2>'+esc(x.title)+'</h2><div class="muted">掲載元：'+esc(x.publisher||"未確認")+'<br>記事公開：'+esc(x.published||"未確認")+'<br>応募締切：未確認 / 当選発表：未確認<br>本人確認・名義・購入期限：元の告知で要確認</div><p><a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">元の記事・告知を確認</a></p><div class="muted">検索語：'+esc(x.query||"未確認")+'</div></article>').join(""):'<div class="empty">該当する候補はありません。</div>';
+ const eligible=allItems.filter(isRecentCandidate);
+ const rows=eligible.filter(x=>(game==="all"||x.game===game)&&[x.title,x.publisher,x.region_priority,x.query].join(" ").toLowerCase().includes(q));
+ document.getElementById("status").dataset.visible=String(rows.length);
+ document.getElementById("list").innerHTML=rows.length?rows.map(x=>'<article class="item"><span class="tag">'+esc(x.game==="pokemon"?"ポケカ":x.game==="onepiece"?"ワンピカード":"カード未判定")+'</span><span class="tag">'+esc(x.region_priority||"地域未確認")+'</span><span class="tag">'+esc(x.page_type||"応募ページ未確認")+'</span><h2>'+esc(x.title)+'</h2><div class="muted">掲載元：'+esc(x.publisher||"未確認")+'<br>記事公開：'+esc(x.published||"未確認")+'<br>応募締切：未確認 / 受付状況：未確認<br>※まとめ記事・古い記事を除外した候補です。リンク先が申込フォームとは限りません。</div><p><a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">告知ページを開いて申込先を確認</a></p><div class="muted">検索語：'+esc(x.query||"未確認")+'</div></article>').join(""):'<div class="empty">条件に合う新しい候補はありません。候補がない場合は、古い募集を表示するのではなく次回の自動収集を待つか、検索語を変えてください。</div>';
 }
 async function load(){
  const status=document.getElementById("status");status.textContent="データを読み込んでいます…";
