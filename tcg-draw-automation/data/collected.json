@@ -1,14 +1,14 @@
 {
-  "collected_at": "2026-10-27T17:04:31.490759+00:00",
+  "collected_at": "2026-10-28T17:40:45.900204+00:00",
   "method": "Google News RSS; 14-day recency limit; roundup/result-title exclusion",
   "note": "まとめ記事・結果記事を除外し、最近の公式・店舗告知候補を優先します。RSSのタイトルだけでは現在の受付中・締切日・申込フォーム直リンクを確定できないため、未確認の候補は応募前にリンク先で確認してください。",
-  "count": 2,
+  "count": 1,
   "errors": [],
   "items": [
     {
       "title": "【2026.10.20】抽選販売「ポケモンカードゲームMEGA 拡張パック 30th CELEBRATION（再販）」 - ホビーステーション",
       "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1od3Y0a1YzdnJjZDI4dy1XMzYzRlpGSElIWEo4VHV5Yk5vQ0hFUDBxblB6ZjMwSS1VT0RscWxPczlnMU5v?oc=5",
-      "published": "2026-10-20T03:01:16+00:00",
+      "published": "2026-10-20T07:00:00+00:00",
       "publisher": "ホビーステーション",
       "query": "\"ポケモンカード\" \"抽選販売\" 受付",
       "game": "pokemon",
@@ -18,22 +18,7 @@
       "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
       "verification": "未確認：リンク先で現在の受付状況を確認",
       "page_type": "応募ページ未確認",
-      "collected_at": "2026-10-27T17:04:28.983252+00:00"
-    },
-    {
-      "title": "PACK SIGNAL｜ワンピースカード抽選・販売情報 (@packsignal_jp) on X - Howl.Link",
-      "url": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE1YcTBHUEI0Ym9kek1hNXlOYmYybGdjbno0Z1hocTZOUXNQT2NwNk9Wcm5MelBFVzFrV25n?oc=5",
-      "published": "2026-10-14T07:00:00+00:00",
-      "publisher": "Howl.Link",
-      "query": "\"ワンピースカード\" \"抽選販売\" 受付",
-      "game": "onepiece",
-      "region_priority": "地域未確認",
-      "deadline": "未確認",
-      "announce": "未確認",
-      "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
-      "verification": "未確認：リンク先で現在の受付状況を確認",
-      "page_type": "応募ページ未確認",
-      "collected_at": "2026-10-27T17:04:30.203625+00:00"
+      "collected_at": "2026-10-28T17:40:39.795658+00:00"
     }
   ]
 }
