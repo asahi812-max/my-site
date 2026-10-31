@@ -1,10 +1,40 @@
 {
-  "collected_at": "2026-10-30T17:29:25.029276+00:00",
+  "collected_at": "2026-10-31T16:33:36.616154+00:00",
   "method": "Google News RSS; 14-day recency limit; roundup/result-title exclusion",
   "note": "まとめ記事・結果記事を除外し、最近の公式・店舗告知候補を優先します。RSSのタイトルだけでは現在の受付中・締切日・申込フォーム直リンクを確定できないため、未確認の候補は応募前にリンク先で確認してください。",
-  "count": 2,
+  "count": 4,
   "errors": [],
   "items": [
+    {
+      "title": "【ポケモンカードゲーム】『30thセレブレーション』再販抽選販売のお知らせ / 小倉店の店舗ブログ - カードラボ",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9qUW1nRHlGU2M3Wll1Z0ZidjRPaW1waW1pNkxpdG9ENEFWOVp2YUlCcDNENXN3QTlIUm5KWXFILXRQQzlKYllCcUxn?oc=5",
+      "published": "2026-10-21T07:00:00+00:00",
+      "publisher": "カードラボ",
+      "query": "\"ポケモンカード\" \"抽選販売\" 受付",
+      "game": "pokemon",
+      "region_priority": "地域未確認",
+      "deadline": "未確認",
+      "announce": "未確認",
+      "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
+      "verification": "未確認：リンク先で現在の受付状況を確認",
+      "page_type": "公式・店舗告知候補",
+      "collected_at": "2026-10-31T16:33:34.632105+00:00"
+    },
+    {
+      "title": "【抽選販売のお知らせ】ワンピースカードゲーム 『ONE PIECE HEROINES PRECIOUS BOX』【カードラボ池袋店】 - カードラボ",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5ndTlsT3JXRGtXSVZfODJDVmloNTlpc0swWjVqWVZFemxZM2NHVHJsRnQ4NENMd19oUUw3ajhWSllrY0JrNDBKWVhR?oc=5",
+      "published": "2026-10-30T07:43:07+00:00",
+      "publisher": "カードラボ",
+      "query": "\"ワンピースカード\" \"抽選販売\" 受付",
+      "game": "onepiece",
+      "region_priority": "地域未確認",
+      "deadline": "未確認",
+      "announce": "未確認",
+      "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
+      "verification": "未確認：リンク先で現在の受付状況を確認",
+      "page_type": "公式・店舗告知候補",
+      "collected_at": "2026-10-31T16:33:35.452064+00:00"
+    },
     {
       "title": "【2026.10.20】抽選販売「ポケモンカードゲームMEGA 拡張パック 30th CELEBRATION（再販）」 - ホビーステーション",
       "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1od3Y0a1YzdnJjZDI4dy1XMzYzRlpGSElIWEo4VHV5Yk5vQ0hFUDBxblB6ZjMwSS1VT0RscWxPczlnMU5v?oc=5",
@@ -18,7 +48,7 @@
       "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
       "verification": "未確認：リンク先で現在の受付状況を確認",
       "page_type": "応募ページ未確認",
-      "collected_at": "2026-10-30T17:29:22.518552+00:00"
+      "collected_at": "2026-10-31T16:33:34.632105+00:00"
     },
     {
       "title": "PACK SIGNAL｜ワンピースカード抽選・販売情報 (@packsignal_jp) on X - Howl.Link",
@@ -33,7 +63,7 @@
       "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
       "verification": "未確認：リンク先で現在の受付状況を確認",
       "page_type": "応募ページ未確認",
-      "collected_at": "2026-10-30T17:29:23.560173+00:00"
+      "collected_at": "2026-10-31T16:33:35.452064+00:00"
     }
   ]
 }
