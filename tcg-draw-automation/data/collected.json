@@ -1,24 +1,8 @@
 {
-  "collected_at": "2026-11-03T18:50:49.780407+00:00",
+  "collected_at": "2026-11-04T19:07:59.875436+00:00",
   "method": "Google News RSS; 14-day recency limit; roundup/result-title exclusion",
   "note": "まとめ記事・結果記事を除外し、最近の公式・店舗告知候補を優先します。RSSのタイトルだけでは現在の受付中・締切日・申込フォーム直リンクを確定できないため、未確認の候補は応募前にリンク先で確認してください。",
-  "count": 1,
+  "count": 0,
   "errors": [],
-  "items": [
-    {
-      "title": "【ポケモンカードゲーム】『30thセレブレーション』再販抽選販売のお知らせ / 小倉店の店舗ブログ - カードラボ",
-      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9qUW1nRHlGU2M3Wll1Z0ZidjRPaW1waW1pNkxpdG9ENEFWOVp2YUlCcDNENXN3QTlIUm5KWXFILXRQQzlKYllCcUxn?oc=5",
-      "published": "2026-10-21T07:00:00+00:00",
-      "publisher": "カードラボ",
-      "query": "\"ポケモンカード\" \"抽選販売\" 受付",
-      "game": "pokemon",
-      "region_priority": "地域未確認",
-      "deadline": "未確認",
-      "announce": "未確認",
-      "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
-      "verification": "未確認：リンク先で現在の受付状況を確認",
-      "page_type": "公式・店舗告知候補",
-      "collected_at": "2026-11-03T18:50:47.541911+00:00"
-    }
-  ]
+  "items": []
 }
