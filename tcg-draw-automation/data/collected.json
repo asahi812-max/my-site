@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-11-20T19:27:03.886284+00:00",
+  "collected_at": "2026-11-21T18:29:07.541656+00:00",
   "method": "Google News RSS; 14-day recency limit; roundup/result-title exclusion",
   "note": "まとめ記事・結果記事を除外し、最近の公式・店舗告知候補を優先します。RSSのタイトルだけでは現在の受付中・締切日・申込フォーム直リンクを確定できないため、未確認の候補は応募前にリンク先で確認してください。",
   "count": 1,
@@ -8,7 +8,7 @@
     {
       "title": "【ポケカ】楽天で抽選販売。ハドウシーカーやスペシャルデッキセットMEGA、30周年パックなど。応募期間は11月18日まで - ファミ通",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBJWlBMVG1adlVTWk5KY3plaTdKeWI1aXhLbC0xajgzbldxZi1fQjVHaExUWkE3RlNUNDdzOEkzWV9POWd6aUo0elA2dXVFRjdxYVJjMkR1bw?oc=5",
-      "published": "2026-11-13T00:00:00+00:00",
+      "published": "2026-11-13T08:00:00+00:00",
       "publisher": "ファミ通",
       "query": "\"ポケモンカード\" \"抽選販売\" 受付",
       "game": "pokemon",
@@ -18,7 +18,7 @@
       "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
       "verification": "未確認：リンク先で現在の受付状況を確認",
       "page_type": "応募ページ未確認",
-      "collected_at": "2026-11-20T19:27:02.161349+00:00"
+      "collected_at": "2026-11-21T18:29:05.586982+00:00"
     }
   ]
 }
