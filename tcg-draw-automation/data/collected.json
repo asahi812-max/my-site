@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-11-26T20:43:29.492691+00:00",
+  "collected_at": "2026-11-27T20:29:07.963107+00:00",
   "method": "Google News RSS; 14-day recency limit; roundup/result-title exclusion",
   "note": "まとめ記事・結果記事を除外し、最近の公式・店舗告知候補を優先します。RSSのタイトルだけでは現在の受付中・締切日・申込フォーム直リンクを確定できないため、未確認の候補は応募前にリンク先で確認してください。",
   "count": 4,
@@ -18,7 +18,7 @@
       "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
       "verification": "未確認：リンク先で現在の受付状況を確認",
       "page_type": "応募ページ未確認",
-      "collected_at": "2026-11-26T20:43:27.629151+00:00"
+      "collected_at": "2026-11-27T20:29:05.978457+00:00"
     },
     {
       "title": "【2026.11.24】抽選販売「ポケモンカードゲームMEGA 拡張パック二種（再販）」 - ホビーステーション",
@@ -33,22 +33,7 @@
       "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
       "verification": "未確認：リンク先で現在の受付状況を確認",
       "page_type": "応募ページ未確認",
-      "collected_at": "2026-11-26T20:43:27.629151+00:00"
-    },
-    {
-      "title": "【ポケカ】楽天で抽選販売。ハドウシーカーやスペシャルデッキセットMEGA、30周年パックなど。応募期間は11月18日まで - ファミ通",
-      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBJWlBMVG1adlVTWk5KY3plaTdKeWI1aXhLbC0xajgzbldxZi1fQjVHaExUWkE3RlNUNDdzOEkzWV9POWd6aUo0elA2dXVFRjdxYVJjMkR1bw?oc=5",
-      "published": "2026-11-13T08:00:00+00:00",
-      "publisher": "ファミ通",
-      "query": "\"ポケモンカード\" \"抽選販売\" 受付",
-      "game": "pokemon",
-      "region_priority": "地域未確認",
-      "deadline": "未確認",
-      "announce": "未確認",
-      "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
-      "verification": "未確認：リンク先で現在の受付状況を確認",
-      "page_type": "応募ページ未確認",
-      "collected_at": "2026-11-26T20:43:27.629151+00:00"
+      "collected_at": "2026-11-27T20:29:05.978457+00:00"
     },
     {
       "title": "エディオン「エンタメ福袋」にポケモンカードのスペシャルセット2種！「30th CELEBRATION」を含む6BOXを抽選販売 - Excite エキサイト",
@@ -63,7 +48,22 @@
       "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
       "verification": "未確認：リンク先で現在の受付状況を確認",
       "page_type": "応募ページ未確認",
-      "collected_at": "2026-11-26T20:43:27.629151+00:00"
+      "collected_at": "2026-11-27T20:29:05.978457+00:00"
+    },
+    {
+      "title": "ポケカジラ、ポケカのメタゲーム分析と、トレカのボックス抽選一覧を無料公開。入賞デッキを揃える費用を店舗の販売価格で表示 - 川崎経済新聞",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5sYXBVVW9XMGlLVUc1ZklPNm1ZZUZha2dneWdkNG96VHNqbVN3SFFmcVRoSFluOU5qRTFLeTFjZGJ0T0YxSi1kSXpzcVFsNFFobHRJYmdn?oc=5",
+      "published": "2026-11-27T06:01:25+00:00",
+      "publisher": "川崎経済新聞",
+      "query": "ポケカ 抽選 札幌 店舗",
+      "game": "pokemon",
+      "region_priority": "地域未確認",
+      "deadline": "未確認",
+      "announce": "未確認",
+      "requirements": "申込ページ・応募期間・本人確認・名義条件・購入期限をリンク先で要確認",
+      "verification": "未確認：リンク先で現在の受付状況を確認",
+      "page_type": "応募ページ未確認",
+      "collected_at": "2026-11-27T20:29:07.626803+00:00"
     }
   ]
 }
